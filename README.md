@@ -1,6 +1,5 @@
 # S&P 500 Portfolio Replication: LASSO vs Greedy Selection
-
-Group coursework (Group 18, 5 members, equal contribution) — cardinality-constrained portfolio replication of the S&P 500 index using two different heuristic approaches to a problem that is exactly NP-hard if you try to solve it exactly.
+cardinality-constrained portfolio replication of the S&P 500 index using two different heuristic approaches to a problem that is exactly NP-hard if you try to solve it exactly.
 
 ## The problem
 
@@ -55,9 +54,7 @@ The Greedy k=50 portfolio's sector weights vs the true S&P 500 sector weights:
 
 The largest gap is IT being meaningfully underweight (25.3% vs 31.0%) even though it's still the single largest sector allocation — a sensible outcome for a variance-minimizing objective, since it wouldn't want to concentrate too heavily in one high-covariance sector even if that sector dominates the actual index. The 14.5% "Other" bucket reflects some selected tickers not being present in this version's sector map — worth cleaning up if this analysis is extended further.
 
-## What I'd credit as my own contribution, separate from the group baseline
 
-This repo documents the group's methodology and results honestly — it's not solo work, and I'm not presenting it as such. My own individual extension of this same core idea (Greedy vs LASSO sparse replication, why Greedy tends to overfit relative to LASSO) is a **separate project**, built independently on a different dataset (NIFTY-listed Indian stocks, not S&P 500), with new analysis the group's version didn't include — a ridge-regularization sweep on the Greedy method's weight-optimization step, and a bootstrap stock-selection stability test that traces the overfitting to the selection step specifically rather than the weighting step. That's here: [sparse-index-replication-nifty](https://github.com/Adarsha115/sparse-index-replication-nifty).
 
 ## Repo structure
 
@@ -81,6 +78,3 @@ python portfolio_replication.py
 ```
 (Update `DATA_DIR` at the top of the script to point at your local `OHLCV_Data/Mega` path.)
 
-## Group contribution
-
-Completed by Group 18 (5 members) as coursework. Everyone contributed to data collection, methodology design, implementation, and the report — see course submission for the formal contribution breakdown.
